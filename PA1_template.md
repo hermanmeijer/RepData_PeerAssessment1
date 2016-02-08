@@ -26,7 +26,7 @@ print(summary(steps$totalsteps))
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##       0    6778   10400    9354   12810   21190
 ```
-![alt text](PA1_template_files\figure-html\unnamed-chunk-2-1.png)
+![alt text](./PA1_template_files/figure-html/unnamed-chunk-2-1.png)
 
 ## What is the average daily activity pattern?
 
@@ -47,7 +47,7 @@ print(pattern[maxinterval,])
 ##      (int)    (dbl)
 ## 1      835 206.1698
 ```
-![alt text](PA1_template_files\figure-html\unnamed-chunk-3-1.png)
+![alt text](./PA1_template_files/figure-html/unnamed-chunk-3-1.png)
 
 ## Imputing missing values
 
@@ -99,7 +99,7 @@ print(summary(steps$totalsteps))
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##      41    9819   10770   10770   12810   21190
 ```
-![alt text](PA1_template_files\figure-html\unnamed-chunk-4-1.png)
+![alt text](./PA1_template_files/figure-html/unnamed-chunk-4-1.png)
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -139,4 +139,4 @@ patternweekend<-activity2 %>%
 #plot(patternweekend$interval, patternweekend$average,type="l",
 #     xlab="interval", ylab="Number of steps", main="Weekends")
 ```
-![alt text](PA1_template_files\figure-html\unnamed-chunk-5-1.png)
+![alt text](./PA1_template_files/figure-html/unnamed-chunk-5-1.png)
