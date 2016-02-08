@@ -17,12 +17,8 @@ activity <- read.csv(unz("activity.zip", "activity.csv"))
 steps<-activity %>% 
     group_by(date) %>%
     summarise(totalsteps = sum(steps,na.rm=TRUE))
-hist(steps$totalsteps, xlab="steps per day", main = "Frequency of steps per day")
-```
+#hist(steps$totalsteps, xlab="steps per day", main = "Frequency of steps per day")
 
-![](PA1_template_files/figure-html/unnamed-chunk-2-1.png)
-
-```r
 print(summary(steps$totalsteps))
 ```
 
@@ -30,7 +26,7 @@ print(summary(steps$totalsteps))
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##       0    6778   10400    9354   12810   21190
 ```
-
+![alt text](PA1_template_files\figure-html\unnamed-chunk-2-1.png)
 
 ## What is the average daily activity pattern?
 
@@ -38,13 +34,8 @@ print(summary(steps$totalsteps))
 pattern<-activity %>%
     group_by(interval) %>%
     summarise(average=mean(steps,na.rm=TRUE))
-plot(x=pattern$interval, y=pattern$average, type="l",
-     main="daily steps per 5 minute time interval", ylab="steps",xlab="time interval")
-```
-
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
-
-```r
+#plot(x=pattern$interval, y=pattern$average, type="l",
+#     main="daily steps per 5 minute time interval", ylab="steps",xlab="time #interval")
 maxinterval<-which.max(pattern$average)
 print(pattern[maxinterval,])
 ```
@@ -56,6 +47,7 @@ print(pattern[maxinterval,])
 ##      (int)    (dbl)
 ## 1      835 206.1698
 ```
+![alt text](PA1_template_files\figure-html\unnamed-chunk-3-1.png)
 
 ## Imputing missing values
 
@@ -98,12 +90,8 @@ steps<-activity2 %>%
   group_by(date) %>%
   summarise(totalsteps = sum(steps,na.rm=TRUE))
 
-hist(steps$totalsteps, xlab="steps per day", main = "Frequency of steps per day \n NA's replaced")
-```
+#hist(steps$totalsteps, xlab="steps per day", main = "Frequency of steps per day \n #NA's replaced")
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
-
-```r
 print(summary(steps$totalsteps))
 ```
 
@@ -111,7 +99,7 @@ print(summary(steps$totalsteps))
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##      41    9819   10770   10770   12810   21190
 ```
-
+![alt text](PA1_template_files\figure-html\unnamed-chunk-4-1.png)
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -145,11 +133,10 @@ patternweekend<-activity2 %>%
   group_by(interval) %>%
   summarise(average=mean(steps,na.rm=TRUE))
 
-par(mfrow=c(2,1)) 
-plot(patternweekday$interval, patternweekday$average,type="l",
-     xlab="interval", ylab="Number of steps", main="Weekdays")
-plot(patternweekend$interval, patternweekend$average,type="l",
-     xlab="interval", ylab="Number of steps", main="Weekends")
+#par(mfrow=c(2,1)) 
+#plot(patternweekday$interval, patternweekday$average,type="l",
+#     xlab="interval", ylab="Number of steps", main="Weekdays")
+#plot(patternweekend$interval, patternweekend$average,type="l",
+#     xlab="interval", ylab="Number of steps", main="Weekends")
 ```
-
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)
+![alt text](PA1_template_files\figure-html\unnamed-chunk-5-1.png)
